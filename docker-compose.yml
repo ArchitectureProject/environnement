@@ -186,6 +186,8 @@ services:
       POSTGRES_PASSWORD: strongPassword
       POSTGRES_USER: admin_user
       POSTGRES_DB: bowling
+    volumes:
+      - ./dbscripts/seed.sql:/docker-entrypoint-initdb.d/seed.sql
     ports:
       - "5436:5436"
     command: [ "postgres", "-c", "listen_addresses=*", "-c", "port=5436" ]
@@ -204,8 +206,6 @@ services:
         condition: service_healthy
     ports:
       - "8000:80"
-    volumes:
-      - .\dbscripts\seed.sql :/docker-entrypoint-initdb.d/seed.sql
     environment:
       DB_CONNECTION_STRING: "Host=bowlingparkpostgres:5436;Database=bowling;Username=admin_user;Password=strongPassword"
     networks:

@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS public."bowlingPark"
     TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public."bowlingPark"
-    OWNER to admin;
+    OWNER to admin_user;
 
 -- Table: public.bowlingAlley
 
@@ -36,4 +36,4 @@ CREATE TABLE IF NOT EXISTS public."bowlingAlley"
     TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public."bowlingAlley"
-    OWNER to admin;
+    OWNER to admin_user;
