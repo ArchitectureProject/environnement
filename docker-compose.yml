@@ -208,6 +208,7 @@ services:
       - "8000:80"
     environment:
       DB_CONNECTION_STRING: "Host=bowlingparkpostgres:5436;Database=bowling;Username=admin_user;Password=strongPassword"
+      USERAPI_URL: "http://usermicroservice:8080"
     networks:
       - app-network
 
