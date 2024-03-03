@@ -107,6 +107,8 @@ services:
       SPRING_DATASOURCE_PASSWORD: strongPassword
       SERVER_PORT: 8082
       CONF_JWK_URL: http://usermicroservice:8080/public_key
+      CONF_EMAIL_SENDER_MICROSERVICE_BASE_URL: http://mailsendermicroservice:8085
+      CONF_USER_MICROSERVICE_BASE_URL: http://usermicroservice:8080
       RABBITMQ_EXCHANGE: paymentServiceExchange
       RABBITMQ_ROUTINGKEY: payment.#
       APP_QUEUE_NAME: processedPaymentQueue
@@ -164,6 +166,7 @@ services:
       SERVER_PORT: 8084
       CONF_JWK_URL: http://usermicroservice:8080/public_key
       CONF_CATALOG_MICROSERVICE_BASE_URL: http://catalogmicroservice:8081
+      CONF_BOWLING_MICROSERVICE_BASE_URL: http://bowlingparkmicroservice:8000
     ports:
       - "8084:8084"
     networks:
