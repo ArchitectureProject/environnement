@@ -60,6 +60,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: strongPassword
       SERVER_PORT: 8081
       CONF_JWK_URL: http://usermicroservice:8080/public_key
+      CONF_BOWLING_MICROSERVICE_BASE_URL: http://bowlingparkmicroservice:80
     ports:
       - "8081:8081"
     networks:
